@@ -1,0 +1,132 @@
+/* 1. Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+/* 2. Thinner Navbar */
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: white;
+  position: sticky; /* Keeps nav at the top when you scroll */
+  top: 0;
+  z-index: 100; 
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+.nav-links span {
+  margin-right: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 3. Hero Section - Fixed to fill screen */
+.hero {
+  position: relative;
+  height: calc(100vh - 60px); 
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: black; /* Placeholder while video loads */
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This stretches the video to fill every corner */
+  z-index: 1;
+}
+
+/* Dark overlay to make text readable */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 2; /* Sits on top of video */
+}
+
+/* Hero Text Content */
+.hero-content {
+  position: relative;
+  z-index: 3; /* Sits on top of overlay */
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(32px, 5vw, 56px); /* Responsive font size */
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.hero-btns button {
+  padding: 15px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.hero-btns button:hover {
+  transform: scale(1.05);
+}
+
+.primary-btn {
+  background: white;
+  color: black;
+  border: none;
+  margin-right: 15px;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
