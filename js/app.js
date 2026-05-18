@@ -6,18 +6,34 @@ import { ContactView } from './views/contact.js';
 
 export function renderApp() {
     const appContainer = document.getElementById('app');
-    if (!appContainer) return;
     
-    let currentBody = '';
-    if (state.currentView === 'home') currentBody = HomeView();
-    if (state.currentView === 'catalog') currentBody = CatalogView();
-    if (state.currentView === 'contact') currentBody = ContactView();
+    // If the container is missing, alert the screen directly
+    if (!appContainer) {
+        document.body.innerHTML = `<h1 style="color:red; padding:20px;">Error: Could not find <div id="app"> in your HTML!</h1>`;
+        return;
+    }
+    
+    try {
+        let currentBody = '';
+        if (state.currentView === 'home') currentBody = HomeView();
+        if (state.currentView === 'catalog') currentBody = CatalogView();
+        if (state.currentView === 'contact') currentBody = ContactView();
 
-    appContainer.innerHTML = `
-        ${NavbarComponent()}
-        <main class="min-h-screen">${currentBody}</main>
-        ${FooterComponent()}
-    `;
+        appContainer.innerHTML = `
+            ${NavbarComponent()}
+            <main class="min-h-screen">${currentBody}</main>
+            ${FooterComponent()}
+        `;
+    } catch (error) {
+        // Catch any template layout or syntax errors and print them on the screen
+        appContainer.innerHTML = `
+            <div style="background:#fee2e2; border:2px solid #ef4444; color:#991b1b; padding:20px; margin:20px; rounded:8px;">
+                <h2 style="margin-top:0;">Rendering Error Caught!</h2>
+                <p><strong>Message:</strong> ${error.message}</p>
+                <pre style="background:#fff; padding:10px; overflow:auto;">${error.stack}</pre>
+            </div>
+        `;
+    }
 }
 
 // Listen for state changes from state.js and re-render
