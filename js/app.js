@@ -1,14 +1,9 @@
 import { state } from './state.js';
 import { NavbarComponent, FooterComponent } from './components.js';
-
-// Import our newly separated view files
 import { HomeView } from './views/home.js';
 import { CatalogView } from './views/catalog.js';
 import { ContactView } from './views/contact.js';
 
-// ==========================================
-// CORE ROUTING ENGINE & APPLICATION ASSEMBLY
-// ==========================================
 export function renderApp() {
     const appContainer = document.getElementById('app');
     if (!appContainer) return;
@@ -24,6 +19,9 @@ export function renderApp() {
         ${FooterComponent()}
     `;
 }
+
+// Listen for state changes from state.js and re-render
+window.addEventListener('statechange', renderApp);
 
 // Window Scroll listener to handle dynamic transparent-to-solid navbar transition
 window.addEventListener('scroll', () => {

@@ -1,5 +1,3 @@
-import { renderApp } from './app.js';
-
 // ==========================================
 // STATE MANAGEMENT
 // ==========================================
@@ -10,15 +8,13 @@ export let state = {
 
 /**
  * Global Routing Controller
- * Updates our local state variables, handles floating vs solid navbar positions,
- * triggers an app redraw, and scrolls back to top smoothly.
  */
 export function navigate(view, category = 'all') {
     state.currentView = view;
     state.selectedCategory = category;
     
-    // We import and trigger renderApp to redraw everything
-    renderApp();
+    // Dispatch a global custom event to tell the app to re-render
+    window.dispatchEvent(new CustomEvent('statechange'));
     
     const nav = document.getElementById('main-nav');
     if (nav) {
