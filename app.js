@@ -1,9 +1,9 @@
 // ==========================================
-// 1. DATA STORE (Your Product Catalog)
+// 1. DATA STORE (Product Catalog)
 // ==========================================
 const products = [
-    { id: 1, name: "VillaSanta Pro-X Dental Chair", category: "chairs", price: 12500, financing: 347, specs: "Full-featured hydraulic dynamic chair with LED light." },
-    { id: 2, name: "VillaSanta Comfort Series Chair", category: "chairs", price: 7800, financing: 217, specs: "Entry-level dental chair with reliable electromechanical operation." },
+    { id: 1, name: "Dental Chair 1", category: "chairs", price: 12500, financing: 347, specs: "Full-featured hydraulic dynamic chair with LED light." },
+    { id: 2, name: "Comfort Series Dental Chair 2", category: "chairs", price: 7800, financing: 217, specs: "Entry-level dental chair with reliable electromechanical operation." },
     { id: 3, name: "PanoView 360 Digital X-Ray", category: "imaging", price: 28000, financing: 778, specs: "High-resolution panoramic X-ray system with CMOS sensor technology." },
     { id: 4, name: "PanoView Compact CBCT", category: "imaging", price: 45000, financing: 1250, specs: "Cone beam computed tomography system for 3D imaging." },
     { id: 5, name: "SterileMax B-Class Autoclave", category: "sterilization", price: 4200, financing: 117, specs: "Class B vacuum autoclave with 23L chamber capacity." },
@@ -42,9 +42,9 @@ function NavbarComponent() {
     const isContact = state.currentView === 'contact' ? 'text-black border-b-2 border-black pb-1' : 'hover:text-black';
 
     return `
-        <nav class="flex justify-between items-center py-4 px-8 bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav class="flex justify-between items-center py-4 px-8 bg-white border-b border-silver sticky top-0 z-50">
             <div class="flex items-center space-x-2 cursor-pointer" onclick="navigate('home')">
-                <div class="bg-blue-600 text-white font-bold px-2 py-1 rounded text-sm">VS</div>
+                <div class="bg-cyan text-white font-bold px-2 py-1 rounded text-sm">VS</div>
                 <span class="font-bold tracking-widest text-sm text-gray-700">VILLASANTA <span class="font-normal text-xs text-gray-500">DENTAL CORP</span></span>
             </div>
             <div class="flex space-x-8 text-sm font-semibold text-gray-600">
@@ -61,11 +61,11 @@ function NavbarComponent() {
 
 function FooterComponent() {
     return `
-        <footer class="bg-[#0f172a] text-white py-12 border-t border-gray-800">
+        <footer class="bg-cobalt text-white py-12 border-t border-gray-800">
             <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0 max-w-sm">
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="bg-blue-600 text-white font-bold px-2 py-1 rounded text-sm">VS</div>
+                        <div class="bg-cyan text-white font-bold px-2 py-1 rounded text-sm">VS</div>
                         <span class="font-bold tracking-widest text-sm text-gray-300">VILLASANTA</span>
                     </div>
                     <p class="text-sm text-gray-500">The precision infrastructure behind the world's most reliable dental clinics.</p>
@@ -106,24 +106,24 @@ function FooterComponent() {
 function HomeView() {
     return `
         <header class="max-w-6xl mx-auto px-8 py-20">
-            <p class="text-blue-600 font-semibold text-sm tracking-widest mb-4">VILLASANTA DENTAL CORP</p>
+            <p class="text-cyan font-semibold text-sm tracking-widest mb-4">VILLASANTA DENTAL CORP</p>
             <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
-                The Architecture <br> of Clinical <br> <span class="text-blue-600">Excellence</span>
+                The Architecture <br> of Clinical <br> <span class="text-cyan">Excellence</span>
             </h1>
             <p class="text-lg text-gray-600 max-w-2xl mb-8">
                 Premium dental equipment engineered for practitioners who demand precision, reliability, and uncompromising quality.
             </p>
             <div class="flex space-x-4">
-                <button onclick="navigate('catalog')" class="bg-blue-600 text-white px-6 py-3 rounded font-semibold hover:bg-blue-700 transition">Explore Catalog &rarr;</button>
-                <button onclick="navigate('contact')" class="bg-white border border-gray-300 text-gray-800 px-6 py-3 rounded font-semibold hover:bg-gray-50 transition">Request Quote</button>
+                <button onclick="navigate('catalog')" class="bg-cyan text-white px-6 py-3 rounded font-semibold hover:bg-cobalt transition">Explore Catalog &rarr;</button>
+                <button onclick="navigate('contact')" class="bg-white border border-silver text-gray-800 px-6 py-3 rounded font-semibold hover:bg-gray-50 transition">Request Quote</button>
             </div>
         </header>
 
-        <section class="bg-white py-20 border-t border-gray-200">
+        <section class="bg-white py-20 border-t border-silver">
             <div class="max-w-4xl mx-auto px-8 text-center">
                 <p class="text-xs font-bold tracking-widest text-gray-400 mb-6 uppercase">Our Mission</p>
                 <h2 class="text-3xl md:text-4xl font-semibold leading-relaxed mb-6">
-                    We are the architects of clinical excellence. We provide the <span class="text-blue-600">precision infrastructure</span> that allows practitioners to focus on the <span class="text-blue-600">art of healing.</span>
+                    We are the architects of clinical excellence. We provide the <span class="text-cyan">precision infrastructure</span> that allows practitioners to focus on the <span class="text-cyan">art of healing.</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-100 pt-12 mt-12">
                     <div><h3 class="text-4xl font-bold text-gray-900 mb-2">500+</h3><p class="text-xs tracking-widest text-gray-500 uppercase">Clinics Equipped</p></div>
@@ -146,7 +146,7 @@ function CatalogView() {
     // Map out the category tab buttons
     const tabButtons = categories.map(cat => {
         const isActive = state.selectedCategory === cat 
-            ? 'bg-blue-600 text-white' 
+            ? 'bg-cyan text-white' 
             : 'bg-white border text-gray-600 hover:bg-gray-50';
         return `<button onclick="navigate('catalog', '${cat}')" class="px-4 py-2 text-xs font-semibold uppercase rounded tracking-wider transition ${isActive}">${cat}</button>`;
     }).join('');
@@ -159,7 +159,7 @@ function CatalogView() {
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                    <span class="text-[10px] text-blue-600 font-bold tracking-widest uppercase">${p.category}</span>
+                    <span class="text-[10px] text-cyan font-bold tracking-widest uppercase">${p.category}</span>
                     <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2">${p.name}</h3>
                     <p class="text-xs text-gray-500 mb-4">${p.specs}</p>
                 </div>
@@ -170,7 +170,7 @@ function CatalogView() {
                             <p class="text-[10px] text-gray-400">Est. $${p.financing}/mo financing</p>
                         </div>
                     </div>
-                    <button onclick="navigate('contact')" class="w-full bg-gray-900 text-white text-center py-2 rounded text-xs font-semibold hover:bg-black transition">+ QUOTE</button>
+                    <button onclick="navigate('contact')" class="w-full bg-cobalt text-white text-center py-2 rounded text-xs font-semibold hover:bg-cobalt hover:opacity-90 transition">+ QUOTE</button>
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@ function CatalogView() {
     return `
         <section class="max-w-7xl mx-auto px-8 py-12">
             <div class="mb-8">
-                <p class="text-xs text-blue-600 font-bold tracking-widest uppercase mb-1">EQUIPMENT CATALOG</p>
+                <p class="text-xs text-cyan font-bold tracking-widest uppercase mb-1">EQUIPMENT CATALOG</p>
                 <h2 class="text-3xl font-bold text-gray-900">Professional-Grade Equipment</h2>
             </div>
             <div class="flex flex-wrap gap-2 mb-8">${tabButtons}</div>
@@ -203,11 +203,11 @@ function ContactView() {
                         </div>
                         <div><label class="text-xs font-semibold text-gray-600 block mb-1">Clinic Name</label><input type="text" placeholder="Sunshine Dental Clinic" class="w-full border p-2 rounded text-sm outline-none focus:border-blue-500"></div>
                         <div><label class="text-xs font-semibold text-gray-600 block mb-1">Additional Requirements</label><textarea rows="4" placeholder="Tell us about your setup needs..." class="w-full border p-2 rounded text-sm outline-none focus:border-blue-500"></textarea></div>
-                        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded text-sm hover:bg-blue-700 transition">Submit Quote Request</button>
+                        <button type="submit" class="w-full bg-cyan text-white font-semibold py-3 rounded text-sm hover:bg-cobalt transition">Submit Quote Request</button>
                     </form>
                 </div>
                 <div class="space-y-6">
-                    <div class="bg-gray-900 text-white p-6 rounded-xl">
+                    <div class="bg-cobalt text-white p-6 rounded-xl">
                         <h3 class="font-bold text-sm tracking-wider mb-4">Why VillaSanta?</h3>
                         <ul class="space-y-3 text-xs text-gray-300">
                             <li>&check; Professional equipment consultation</li>
