@@ -8,7 +8,7 @@ export function HomeView() {
     return `
         <!-- HERO BACKDROP SECTION -->
         <header class="relative min-h-screen flex items-center bg-cover bg-no-repeat bg-center md:bg-right-bottom" 
-                style="background-image: url('hero-chair-bg.jpg'), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000');">
+                style="background-image: url('hero-chair-bg.jpg'), url('./images/hero-chair-bg.jpg');">
             
             <!-- Left-to-right soft frosted gradient mask covering the text block for optimal legibility -->
             <div class="absolute inset-0 bg-gradient-to-r from-titanium via-titanium/85 to-transparent pointer-events-none z-0"></div>
@@ -16,16 +16,15 @@ export function HomeView() {
             <!-- Left Aligned Value Proposition -->
             <div class="relative max-w-7xl mx-auto w-full px-8 md:px-12 py-32 z-10">
                 <div class="max-w-2xl">
-                    <p class="text-cyan font-bold text-xs md:text-sm tracking-[0.2em] mb-4 uppercase">VILLASANTA DENTAL CORP</p>
                     
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-cobalt leading-[1.1] tracking-tight mb-6">
-                        The Architecture <br> 
-                        <span class="text-cobalt">of Clinical</span> <br> 
-                        <span class="text-cyan">Excellence</span>
+                        Helping Dentists <br> 
+                        <span class="text-cobalt">Build</span> <br> 
+                        <span class="text-cyan">Reliable Clinics</span>
                     </h1>
                     
                     <p class="text-sm md:text-base text-gray-500 font-normal leading-relaxed max-w-lg mb-10">
-                        Premium dental equipment engineered for practitioners who demand precision, reliability, and uncompromising quality.
+                        Your trusted partner for quality equipment, smooth installation, and the ongoing support your daily practice depends on.
                     </p>
                     
                     <div class="flex space-x-4">
@@ -53,10 +52,10 @@ export function HomeView() {
             <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
                 <p class="text-[10px] font-bold tracking-[0.25em] text-cyan mb-6 uppercase">Our Mission</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-cobalt leading-[1.3] mb-8">
-                    We are the architects of clinical excellence. We provide the <span class="text-cyan font-semibold">precision infrastructure</span> that allows practitioners to focus on the <span class="text-cyan font-semibold">art of healing.</span>
+                    Providing the solid foundation every modern dental clinic deserves. We focus on <span class="text-cyan font-semibold">quality equipement</span> so that you can focus on <span class="text-cyan font-semibold">patient care.</span>
                 </h2>
                 <p class="text-gray-500 text-xs md:text-sm leading-relaxed mb-16 max-w-2xl mx-auto">
-                    Every dental chair, every imaging system, every sterilization unit we deliver is a commitment to the practitioners who trust us — and the patients who trust them. We source, test, and stand behind equipment that meets the highest international standards, so your clinic can operate with the confidence it deserves.
+                    Every dental chair, every imaging system, every sterilization unit we deliver is a commitment to the practitioners who trust us — and the patients who trust them. We source and deliver equipment that meets high standards, so your clinic can operate with the confidence it deserves.
                 </p>
                 
                 <!-- Pristine Horizontal Stats Bar Layout -->
@@ -81,7 +80,6 @@ export function HomeView() {
 
         <!-- EQUIPMENT CATEGORIES GRID SECTION (Dark Theme) -->
         <section class="bg-cobalt text-white py-24 relative overflow-hidden">
-            <!-- Subtle Dark Blueprint lines -->
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none tech-grid"></div>
             
             <div class="relative max-w-7xl mx-auto px-8 md:px-12 z-10">
@@ -96,113 +94,111 @@ export function HomeView() {
                     </button>
                 </div>
 
-                <!-- 6-Element Clinical Interactive Product Grid (3 per row) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 border border-slate-800 rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-slate-800">
                     
-                    <!-- Category 1: Chairs -->
-                    <div onclick="navigate('catalog', 'chairs')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
+                    <div onclick="navigate('catalog', 'chairs')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
                             <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901d?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Dental Chairs" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <!-- Dynamic Gradient Shade -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                                alt="Dental Chairs" 
+                                class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Chairs</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Dental Chairs</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">Precision-engineered operatory chairs with hydraulic lift systems.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Chairs</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Dental Chairs</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">Precision-engineered operatory chairs with hydraulic lift systems.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Category 2: Imaging -->
-                    <div onclick="navigate('catalog', 'imaging')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Panoramic X-Rays" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                    <div onclick="navigate('catalog', 'imaging')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
+                            <img src="./images/pano-home.jpg"
+                                alt="Panoramic X-Rays" 
+                                class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Imaging</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Panoramic X-Rays</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">Advanced digital imaging systems for comprehensive diagnostics.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Imaging</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Panoramic X-Rays</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">Advanced digital imaging systems for comprehensive diagnostics.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Category 3: Sterilization -->
-                    <div onclick="navigate('catalog', 'sterilization')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Autoclaves" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                    <div onclick="navigate('catalog', 'sterilization')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
+                            <img src="./images/autoclave-home.jpg"
+                                alt="Autoclaves" 
+                                class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Sterilization</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Autoclaves</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">Medical-grade sterilization units for uncompromising safety.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Sterilization</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Autoclaves</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">Medical-grade sterilization units for uncompromising safety.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Category 4: Compressors -->
-                    <div onclick="navigate('catalog', 'compressors')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Compressors" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                    <div onclick="navigate('catalog', 'compressors')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
+                            <img src="./images/compressor-home.jpg" 
+                                alt="Compressors" 
+                                class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Compressors</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Compressors</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">Oil-free dental compressors engineered for continuous operation.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Compressors</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Compressors</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">Oil-free dental compressors engineered for continuous operation.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Category 5: Suction -->
-                    <div onclick="navigate('catalog', 'suction')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Suction Systems" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                    <div onclick="navigate('catalog', 'suction')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
+                            <img src="./images/suction-home.jpg" 
+                                alt="Suction Systems" 
+                                class="w-full h-full object-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Suction</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Suction Systems</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">High-performance evacuation systems for modern clinics.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Suction</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Suction Systems</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">High-performance evacuation systems for modern clinics.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Category 6: Accessories -->
-                    <div onclick="navigate('catalog', 'accessories')" class="group relative bg-[#1E293B]/40 border border-slate-800 rounded-xl overflow-hidden cursor-pointer transition-all duration-300">
-                        <div class="h-80 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Amalgamators" 
-                                 class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105 brightness-[0.7] group-hover:brightness-[0.85]" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-cobalt via-transparent to-transparent"></div>
+                    <div onclick="navigate('catalog', 'accessories')" class="group relative min-h-[400px] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 z-0">
+                            <img src="./images/amalgamator-home.jpg" 
+                                alt="Amalgamators" 
+                                class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-102 brightness-[0.4] group-hover:brightness-[0.45]" />
+                            <div class="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-1 block">Accessories</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Amalgamators</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">Precision mixing devices for consistent amalgam preparation.</p>
-                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 hover:underline">
+                        
+                        <div class="relative z-10">
+                            <span class="text-[9px] text-cyan font-bold tracking-widest uppercase mb-2 block">Accessories</span>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Amalgamators</h3>
+                            <p class="text-xs text-gray-400 mb-6 leading-relaxed max-w-sm">Precision mixing devices for consistent amalgam preparation.</p>
+                            <span class="text-xs font-semibold text-cyan inline-flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Explore</span> <span class="text-sm">↗</span>
                             </span>
                         </div>
